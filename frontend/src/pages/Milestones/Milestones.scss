@@ -1,0 +1,106 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.milestones-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-size: 13px;
+      color: $text-secondary;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+  }
+
+  &__card {
+    @include card-surface;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: $text-primary;
+        margin-bottom: 4px;
+      }
+
+      p {
+        font-size: 13px;
+        color: $text-secondary;
+        line-height: 1.4;
+      }
+    }
+
+    &-progress {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      &-labels {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        color: $text-secondary;
+        font-weight: 500;
+      }
+
+      &-track {
+        height: 6px;
+        background-color: $bg-subtle;
+        border-radius: $radius-pill;
+        overflow: hidden;
+      }
+
+      &-fill {
+        height: 100%;
+        background-color: $action-primary-bg;
+        border-radius: $radius-pill;
+        transition: width 0.3s ease;
+      }
+    }
+
+    &-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid $border-color;
+      font-size: 12px;
+      color: $text-muted;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+  }
+}

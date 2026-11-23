@@ -1,0 +1,258 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.task-details-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: $text-secondary;
+    font-weight: 500;
+    @include hover-transition;
+
+    &:hover {
+      color: $text-primary;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+
+    &-left {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      h1 {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+
+      &-badges {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 24px;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__card {
+    @include card-surface;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: $text-primary;
+    }
+
+    p {
+      font-size: 14px;
+      color: $text-secondary;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+  }
+
+  // Review Result Block
+  &__review-result {
+    background-color: $bg-canvas;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      span:first-child {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $text-muted;
+      }
+
+      &-stars {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        color: #D97706;
+      }
+    }
+
+    &-feedback {
+      font-size: 13px;
+      color: $text-primary;
+      font-style: italic;
+    }
+
+    &-meta {
+      font-size: 11px;
+      color: $text-muted;
+    }
+  }
+
+  // Meta items in right sidebar
+  &__meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__meta-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+
+    &-label {
+      color: $text-muted;
+    }
+
+    &-value {
+      font-weight: 500;
+      color: $text-primary;
+    }
+  }
+
+  // Workflow Action Box
+  &__workflow-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  // Rating Selector Buttons
+  &__rating-selector {
+    display: flex;
+    gap: 6px;
+
+    button {
+      flex: 1;
+      height: 36px;
+      background-color: $bg-surface;
+      border: 1px solid $border-strong;
+      border-radius: $radius-md;
+      font-weight: 600;
+      cursor: pointer;
+      @include hover-transition;
+
+      &:hover {
+        background-color: $bg-subtle;
+      }
+
+      &.active {
+        background-color: $action-primary-bg;
+        color: $action-primary-text;
+        border-color: $action-primary-bg;
+      }
+    }
+  }
+
+  // Attachments Section
+  &__attachments-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &__attachments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__attachment-item {
+    padding: 14px;
+    background-color: $bg-canvas;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+
+      span:first-child {
+        font-weight: 600;
+        color: $text-primary;
+      }
+
+      span:last-child {
+        color: $text-muted;
+      }
+    }
+
+    &-note {
+      font-size: 13px;
+      color: $text-secondary;
+      line-height: 1.5;
+    }
+
+    &-file {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $bg-surface;
+      border: 1px solid $border-color;
+      border-radius: $radius-sm;
+      padding: 8px 12px;
+      font-size: 12px;
+
+      &-name {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-weight: 500;
+        color: $text-primary;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bg-canvas;
+  padding: 24px;
+
+  &__card {
+    width: 100%;
+    max-width: 400px;
+    background-color: $bg-surface;
+    border: 1px solid $border-color;
+    border-radius: $radius-lg;
+    padding: 32px 28px;
+    box-shadow: $shadow-card;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 28px;
+
+    &-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+
+      &-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: $radius-sm;
+        background-color: $action-primary-bg;
+        color: $action-primary-text;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: $text-primary;
+        letter-spacing: -0.02em;
+      }
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 600;
+      color: $text-primary;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 13px;
+      color: $text-secondary;
+    }
+  }
+
+  &__error {
+    background-color: $status-danger-bg;
+    color: $status-danger-text;
+    border: 1px solid $status-danger-border;
+    border-radius: $radius-md;
+    padding: 10px 12px;
+    font-size: 13px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 13px;
+    color: $text-secondary;
+
+    a {
+      color: $text-primary;
+      font-weight: 600;
+      text-decoration: underline;
+
+      &:hover {
+        color: #000000;
+      }
+    }
+  }
+}

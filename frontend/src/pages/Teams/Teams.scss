@@ -1,0 +1,128 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.teams-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-size: 13px;
+      color: $text-secondary;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+
+  &__card {
+    @include card-surface;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+
+      h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: $text-primary;
+        margin-bottom: 4px;
+      }
+
+      p {
+        font-size: 13px;
+        color: $text-secondary;
+        line-height: 1.4;
+      }
+    }
+
+    &-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 12px;
+      background-color: $bg-canvas;
+      border: 1px solid $border-color;
+      border-radius: $radius-md;
+      font-size: 13px;
+
+      &-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span:first-child {
+          color: $text-muted;
+          font-size: 12px;
+        }
+
+        span:last-child {
+          font-weight: 500;
+          color: $text-primary;
+        }
+      }
+    }
+
+    &-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid $border-color;
+      padding-top: 14px;
+      margin-top: auto;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // Members Management in Modal
+  &__members-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &-add {
+      display: flex;
+      gap: 10px;
+
+      select {
+        flex: 1;
+      }
+    }
+
+    &-list {
+      max-height: 280px;
+      overflow-y: auto;
+      border: 1px solid $border-color;
+      border-radius: $radius-md;
+    }
+  }
+}

@@ -1,0 +1,185 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-size: 13px;
+      color: $text-secondary;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+  }
+
+  // Top KPI Stat Cards Grid
+  &__kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  &__kpi-card {
+    @include card-surface;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: $text-muted;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    &-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: $text-primary;
+      line-height: 1;
+    }
+
+    &-subtext {
+      font-size: 12px;
+      color: $text-secondary;
+    }
+  }
+
+  // Chart & Highlights Section
+  &__section-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 20px;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    @include card-surface;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h3 {
+        font-size: 15px;
+        font-weight: 600;
+        color: $text-primary;
+      }
+    }
+  }
+
+  &__chart-container {
+    width: 100%;
+    height: 260px;
+  }
+
+  // Lists & Activity Tables
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    background-color: $bg-canvas;
+    border: 1px solid $border-color;
+    border-radius: $radius-md;
+    @include hover-transition;
+
+    &:hover {
+      background-color: $bg-subtle;
+      border-color: $border-strong;
+    }
+
+    &-left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+
+      h4 {
+        font-size: 13px;
+        font-weight: 600;
+        color: $text-primary;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      span {
+        font-size: 11px;
+        color: $text-muted;
+      }
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+  }
+
+  // Review & Attention Callout Card
+  &__attention-card {
+    background-color: #FFFDF5;
+    border: 1px solid #FEF3C7;
+    border-radius: $radius-lg;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    &-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      &-icon {
+        color: #B45309;
+      }
+
+      h4 {
+        font-size: 14px;
+        font-weight: 600;
+        color: #92400E;
+      }
+
+      p {
+        font-size: 12px;
+        color: #B45309;
+      }
+    }
+  }
+}

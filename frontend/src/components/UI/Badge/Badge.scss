@@ -1,0 +1,99 @@
+@use '../../../styles/variables' as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: $radius-pill;
+  line-height: 1.4;
+  border: 1px solid transparent;
+  white-space: nowrap;
+
+  &__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: currentColor;
+  }
+
+  // Pending
+  &--pending {
+    background-color: $status-pending-bg;
+    color: $status-pending-text;
+    border-color: $status-pending-border;
+  }
+
+  // In Progress
+  &--inprogress {
+    background-color: $status-inprogress-bg;
+    color: $status-inprogress-text;
+    border-color: $status-inprogress-border;
+  }
+
+  // PendingReview
+  &--pendingreview {
+    background-color: $status-review-bg;
+    color: $status-review-text;
+    border-color: $status-review-border;
+  }
+
+  // Completed / Approved
+  &--completed,
+  &--approved {
+    background-color: $status-completed-bg;
+    color: $status-completed-text;
+    border-color: $status-completed-border;
+  }
+
+  // Delayed / Rejected / High
+  &--delayed,
+  &--rejected,
+  &--high {
+    background-color: $status-danger-bg;
+    color: $status-danger-text;
+    border-color: $status-danger-border;
+  }
+
+  // Medium
+  &--medium {
+    background-color: $priority-medium-bg;
+    color: $priority-medium-text;
+    border-color: $priority-medium-border;
+  }
+
+  // Low
+  &--low {
+    background-color: $priority-low-bg;
+    color: $priority-low-text;
+    border-color: $priority-low-border;
+  }
+
+  // Roles
+  &--manager {
+    background-color: #18181B;
+    color: #FFFFFF;
+    border-color: #18181B;
+  }
+
+  &--team_leader {
+    background-color: #EFF6FF;
+    color: #1E40AF;
+    border-color: #BFDBFE;
+  }
+
+  &--member {
+    background-color: #F4F4F5;
+    color: #52525B;
+    border-color: #E4E4E7;
+  }
+
+  // Default neutral
+  &--neutral {
+    background-color: $bg-subtle;
+    color: $text-secondary;
+    border-color: $border-color;
+  }
+}

@@ -1,0 +1,74 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.extensions-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-size: 13px;
+      color: $text-secondary;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 12px;
+
+    button {
+      background: transparent;
+      border: 1px solid transparent;
+      padding: 6px 14px;
+      border-radius: $radius-pill;
+      font-size: 13px;
+      font-weight: 500;
+      color: $text-secondary;
+      cursor: pointer;
+      @include hover-transition;
+
+      &:hover {
+        background-color: $bg-subtle;
+        color: $text-primary;
+      }
+
+      &.active {
+        background-color: $action-primary-bg;
+        color: $action-primary-text;
+      }
+    }
+  }
+
+  &__table-card {
+    @include card-surface;
+    overflow: hidden;
+
+    a {
+      font-weight: 500;
+      color: $text-primary;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+}

@@ -1,0 +1,47 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px 24px;
+  background-color: $bg-surface;
+  border: 1px dashed $border-color;
+  border-radius: $radius-lg;
+
+  &__icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $bg-subtle;
+    color: $text-secondary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-size: 15px;
+    font-weight: 600;
+    color: $text-primary;
+    margin-bottom: 6px;
+  }
+
+  &__subtitle {
+    font-size: 13px;
+    color: $text-secondary;
+    max-width: 360px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,108 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__header {
+    h1 {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-size: 13px;
+      color: $text-secondary;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 24px;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    @include card-surface;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: $text-primary;
+    }
+  }
+
+  &__info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  &__info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    &-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: $text-muted;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    &-value {
+      font-size: 14px;
+      font-weight: 500;
+      color: $text-primary;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+
+    small {
+      margin-top: 4px;
+      font-size: 11px;
+      color: $text-muted;
+    }
+  }
+
+  &__alert {
+    padding: 10px 14px;
+    border-radius: $radius-md;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &--success {
+      background-color: $status-completed-bg;
+      color: $status-completed-text;
+      border: 1px solid $status-completed-border;
+    }
+
+    &--error {
+      background-color: $status-danger-bg;
+      color: $status-danger-text;
+      border: 1px solid $status-danger-border;
+    }
+  }
+}
